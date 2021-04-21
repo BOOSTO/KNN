@@ -130,7 +130,7 @@ def eval():
 
 def hyperparamsearch():
     f = open("paramsearch.csv", "w")
-    f.write("k,sigma,fold_mean,fold_var\n")
+    f.write("k,sigma,p,fold_mean,fold_var\n")
 
     maxmean = 0
     k_optimal = 0
@@ -156,7 +156,7 @@ def hyperparamsearch():
                     p_optimal = p
 
                 print("\nmean of cross validation: " + str(mean))
-                f.write(str(k) + "," + str(sigma) + "," + str(mean) + "," + str(var) + "\n")
+                f.write(str(k) + "," + str(sigma) + "," + str(p) + "," + str(mean) + "," + str(var) + "\n")
     print("\noptimal k: " + str(k_optimal) + " optimal sigma: " + str(s_optimal))
     print("mean accuracy: " + str(maxmean))
     f.close()
