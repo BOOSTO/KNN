@@ -136,11 +136,11 @@ def hyperparamsearch():
     k_optimal = 0
     s_optimal = 0
     p_optimal = 0
-    for k in [3, 4, 5]:
-        for i in range(50):
-            sigma = 0.75 + i * 0.01
-            for j in [-1, 0, 2]:
-                p = math.pow(2, j)
+    for k in [3, 4]:
+        for i in [0]:
+            sigma = 1.4338 + i * 0.01
+            for j in range(-5,5):
+                p = 2 + j * 0.005
 
                 # run 4-fold cross validation
                 print("\n4-fold with k = " + str(k) + ", sigma = " + str(sigma) + ", p = " + str(p) + ":")
@@ -172,6 +172,6 @@ def kaggle(k, sigma, p):
         f.write(str(idx) + "," + str(income) + "\n")
     f.close()
 
-#kaggle(4, 1.27, 2)
-hyperparamsearch()
+kaggle(3, 1.4338, 1.975)
+#hyperparamsearch()
 #eval()
